@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import moment from 'moment';
+import StringUtils from '../utils/stringUtils';
 
 /**
  * Student database model.
@@ -168,6 +169,30 @@ export default function (sequelize) {
       as: 'updatedBy',
     });
   };
+
+  student.beforeCreate((student, options) => {
+    student.firstName  = StringUtils.trimString(student.firstName);
+    student.middleName = StringUtils.trimString(student.middleName);
+    student.lastName   = StringUtils.trimString(student.lastName);
+
+    student.fullName = StringUtils.buildFullName(
+      student.firstName,
+      student.middleName,
+      student.lastName
+    );
+  });
+
+  student.beforeUpdate((student, options) => {
+    student.firstName  = StringUtils.trimString(student.firstName);
+    student.middleName = StringUtils.trimString(student.middleName);
+    student.lastName   = StringUtils.trimString(student.lastName);
+
+    student.fullName = StringUtils.buildFullName(
+      student.firstName,
+      student.middleName,
+      student.lastName
+    );
+  });
 
   return student;
 }

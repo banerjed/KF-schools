@@ -115,7 +115,6 @@ const en = {
         fields: {
           id: 'Id',
           'picture': 'Picture',
-          'rollNumber': 'RollNumber',
           'firstName': 'FirstName',
           'middleName': 'Middle Name',
           'lastName': 'Last Name',
@@ -126,6 +125,7 @@ const en = {
           'dateOfBirth': 'Date Of Birth',
           'dateOfJoinRange': 'Date Of Joining School',
           'dateOfJoin': 'Date Of Joining School',
+          'rollNumber': 'RollNumber',
           'household': 'Household',
           'enrollments': 'Enrollments',
           'payments': 'Payments',
@@ -511,11 +511,11 @@ const en = {
         fields: {
           id: 'Id',
           'course': 'Course',
-          'category': 'Category',
           'dueDateRange': 'Due Date',
           'dueDate': 'Due Date',
           'name': 'Assignment Name',
           'homeworkLink': 'Homework Link',
+          'category': 'Category',
           'maxScoreRange': 'Max Score',
           'maxScore': 'Max Score',
           'weightRange': 'Weight',
@@ -532,7 +532,6 @@ const en = {
             'Classwork': 'Classwork',
             'Assessment': 'Assessment',
             'Labs': 'Labs',
-            'Other': 'Other',
           },
         },
         new: {
@@ -750,8 +749,8 @@ const en = {
         },
         fields: {
           id: 'Id',
-          'student': 'Student',
           'exam': 'Exam',
+          'student': 'Student',
           'scoreRange': 'Score',
           'score': 'Score',
           'grade': 'Grade',
@@ -1240,7 +1239,7 @@ const en = {
   },
 
   auth: {
-    tenants: 'Workspaces',
+    tenants: 'NGOs',
     profile: {
       title: 'Profile',
       success: 'Profile successfully updated',
@@ -1291,6 +1290,22 @@ const en = {
     admin: {
       label: 'Admin',
       description: 'Full access to all resources',
+    },
+    teacher: {
+      label: 'Teacher',
+      description: 'Access to tests and assignments',
+    },
+    schooladmin: {
+      label: 'School Administration',
+      description: 'Access to all school related resources',
+    },
+    accounting: {
+      label: 'Accounting',
+      description: 'Access to payments and donor info',
+    },
+    donor: { 
+      label: 'Donor Access',
+      description: 'Read only access to student info',
     },
     custom: {
       label: 'Custom Role',
@@ -1368,40 +1383,40 @@ const en = {
 
   tenant: {
     name: 'tenant',
-    label: 'Workspaces',
-    menu: 'Workspaces',
+    label: 'NGOs',
+    menu: 'NGOs',
     list: {
-      menu: 'Workspaces',
-      title: 'Workspaces',
+      menu: 'NGOs',
+      title: 'NGOs',
     },
     create: {
-      button: 'Create Workspace',
-      success: 'Workspace successfully saved',
+      button: 'Create NGO',
+      success: 'NGO successfully saved',
     },
     update: {
-      success: 'Workspace successfully saved',
+      success: 'NGO successfully saved',
     },
     destroy: {
-      success: 'Workspace successfully deleted',
+      success: 'NGO successfully deleted',
     },
     destroyAll: {
-      success: 'Workspace(s) successfully deleted',
+      success: 'NGO(s) successfully deleted',
     },
     edit: {
-      title: 'Edit Workspace',
+      title: 'Edit NGO',
     },
     fields: {
       id: 'Id',
       name: 'Name',
       url: 'URL',
-      tenantName: 'Workspace Name',
-      tenantId: 'Workspace',
-      tenantUrl: 'Workspace URL',
+      tenantName: 'NGO Name',
+      tenantId: 'NGO',
+      tenantUrl: 'NGO URL',
       plan: 'Plan',
     },
     enumerators: {},
     new: {
-      title: 'New Workspace',
+      title: 'New NGO',
     },
     invitation: {
       view: 'View Invitations',
@@ -1411,7 +1426,7 @@ const en = {
       declined: 'Invitation successfully declined',
       acceptWrongEmail: 'Accept Invitation With This Email',
     },
-    select: 'Select Workspace',
+    select: 'Select NGO',
     validation: {
       url:
         'Your workspace URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',

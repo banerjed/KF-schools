@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize';
+import StringUtils from '../utils/stringUtils';
 
 /**
  * Course database model.
@@ -18,13 +19,13 @@ export default function (sequelize) {
         allowNull: false,
         values: [
           "Yr_2020_21",
+          "Yr_2021_22",
+          "Yr_2022_23",
           "Yr_2019_20",
           "Yr_2018_19",
           "Yr_2017_18",
           "Yr_2016_17",
-          "Yr_2015_16",
-          "Yr_2021_2022",
-          "Yr_2022_2023"
+          "Yr_2015_16"
         ],
       },
       courseName: {
@@ -109,6 +110,14 @@ export default function (sequelize) {
       as: 'updatedBy',
     });
   };
+
+//  course.beforeCreate((course, options) => {
+//    course.courseName = StringUtils.buildCourseName(
+//      course.teacher,
+//      course.section,
+//      course.subject
+//    );
+//  });
 
   return course;
 }

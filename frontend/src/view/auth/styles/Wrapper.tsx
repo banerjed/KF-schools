@@ -15,7 +15,7 @@ const Wrapper = styled('div')({
     width: '100%',
     height: '100%',
     display: 'flex',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
     position: 'absolute',
     zIndex: '1',
     top: '0',

@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import moment from 'moment';
+import StringUtils from '../utils/stringUtils';
 
 /**
  * Staff database model.
@@ -222,6 +223,30 @@ export default function (sequelize) {
       as: 'updatedBy',
     });
   };
+
+  staff.beforeCreate((staff, options) => {
+    staff.firstName  = StringUtils.trimString(staff.firstName);
+    staff.middleName = StringUtils.trimString(staff.middleName);
+    staff.lastName   = StringUtils.trimString(staff.lastName);
+
+    staff.fullName = StringUtils.buildFullName(
+      staff.firstName,
+      staff.middleName,
+      staff.lastName
+    );
+  });
+
+  staff.beforeUpdate((staff, options) => {
+    staff.firstName  = StringUtils.trimString(staff.firstName);
+    staff.middleName = StringUtils.trimString(staff.middleName);
+    staff.lastName   = StringUtils.trimString(staff.lastName);
+
+    staff.fullName = StringUtils.buildFullName(
+      staff.firstName,
+      staff.middleName,
+      staff.lastName
+    );
+  });
 
   return staff;
 }

@@ -4,8 +4,12 @@
 class Roles {
   static get values() {
     return {
-      admin: 'admin',
-      custom: 'custom',
+      admin:        'admin',
+      schooladmin:  'schooladmin',                                  
+      teacher:      'teacher',                                      
+      accounting:   'accounting',                                   
+      donor:        'donor',                                        
+      custom:       'custom',    
     };
   }
 }

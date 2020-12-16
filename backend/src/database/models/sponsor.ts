@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import moment from 'moment';
+import StringUtils from '../utils/stringUtils';
 
 /**
  * Sponsor database model.
@@ -101,6 +102,24 @@ export default function (sequelize) {
       as: 'updatedBy',
     });
   };
+
+  sponsor.beforeCreate((sponsor, options) => {
+    sponsor.firstName  = StringUtils.trimString(sponsor.firstName);
+    sponsor.lastName   = StringUtils.trimString(sponsor.lastName);
+
+    sponsor.fullName = StringUtils.buildFullName(
+      sponsor.firstName, '', sponsor.lastName
+    );
+  });
+
+  sponsor.beforeUpdate((sponsor, options) => {
+    sponsor.firstName  = StringUtils.trimString(sponsor.firstName);
+    sponsor.lastName   = StringUtils.trimString(sponsor.lastName);
+
+    sponsor.fullName = StringUtils.buildFullName(
+      sponsor.firstName, '', sponsor.lastName
+    );
+  });
 
   return sponsor;
 }

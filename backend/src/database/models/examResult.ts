@@ -58,13 +58,13 @@ export default function (sequelize) {
   );
 
   examResult.associate = (models) => {
-    models.examResult.belongsTo(models.student, {
-      as: 'student',
+    models.examResult.belongsTo(models.examination, {
+      as: 'exam',
       constraints: false,
     });
 
-    models.examResult.belongsTo(models.examination, {
-      as: 'exam',
+    models.examResult.belongsTo(models.student, {
+      as: 'student',
       constraints: false,
     });
 

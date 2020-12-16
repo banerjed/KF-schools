@@ -14,17 +14,6 @@ export default function (sequelize) {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      category: {
-        type: DataTypes.ENUM,
-        values: [
-          "Homework",
-          "Project",
-          "Classwork",
-          "Assessment",
-          "Labs",
-          "Other"
-        ],
-      },
       dueDate: {
         type: DataTypes.DATEONLY,
         get: function() {
@@ -50,6 +39,16 @@ export default function (sequelize) {
         validate: {
 
         }
+      },
+      category: {
+        type: DataTypes.ENUM,
+        values: [
+          "Homework",
+          "Project",
+          "Classwork",
+          "Assessment",
+          "Labs"
+        ],
       },
       maxScore: {
         type: DataTypes.INTEGER,
