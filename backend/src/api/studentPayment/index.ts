@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/student-payment`,
+    require('./studentPaymentCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/student-payment/:id`,
+    require('./studentPaymentUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/student-payment/import`,
+    require('./studentPaymentImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/student-payment`,
+    require('./studentPaymentDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-payment/autocomplete`,
+    require('./studentPaymentAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-payment`,
+    require('./studentPaymentList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-payment/:id`,
+    require('./studentPaymentFind').default,
+  );
+};

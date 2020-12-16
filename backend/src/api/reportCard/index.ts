@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/report-card`,
+    require('./reportCardCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/report-card/:id`,
+    require('./reportCardUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/report-card/import`,
+    require('./reportCardImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/report-card`,
+    require('./reportCardDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/report-card/autocomplete`,
+    require('./reportCardAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/report-card`,
+    require('./reportCardList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/report-card/:id`,
+    require('./reportCardFind').default,
+  );
+};

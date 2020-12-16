@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/enrollment`,
+    require('./enrollmentCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/enrollment/:id`,
+    require('./enrollmentUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/enrollment/import`,
+    require('./enrollmentImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/enrollment`,
+    require('./enrollmentDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/enrollment/autocomplete`,
+    require('./enrollmentAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/enrollment`,
+    require('./enrollmentList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/enrollment/:id`,
+    require('./enrollmentFind').default,
+  );
+};

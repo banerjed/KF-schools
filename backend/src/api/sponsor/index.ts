@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/sponsor`,
+    require('./sponsorCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/sponsor/:id`,
+    require('./sponsorUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/sponsor/import`,
+    require('./sponsorImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/sponsor`,
+    require('./sponsorDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sponsor/autocomplete`,
+    require('./sponsorAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sponsor`,
+    require('./sponsorList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sponsor/:id`,
+    require('./sponsorFind').default,
+  );
+};

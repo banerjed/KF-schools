@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/student-attendance`,
+    require('./studentAttendanceCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/student-attendance/:id`,
+    require('./studentAttendanceUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/student-attendance/import`,
+    require('./studentAttendanceImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/student-attendance`,
+    require('./studentAttendanceDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-attendance/autocomplete`,
+    require('./studentAttendanceAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-attendance`,
+    require('./studentAttendanceList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-attendance/:id`,
+    require('./studentAttendanceFind').default,
+  );
+};

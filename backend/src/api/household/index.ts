@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/household`,
+    require('./householdCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/household/:id`,
+    require('./householdUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/household/import`,
+    require('./householdImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/household`,
+    require('./householdDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/household/autocomplete`,
+    require('./householdAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/household`,
+    require('./householdList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/household/:id`,
+    require('./householdFind').default,
+  );
+};

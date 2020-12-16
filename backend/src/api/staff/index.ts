@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/staff`,
+    require('./staffCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/staff/:id`,
+    require('./staffUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/staff/import`,
+    require('./staffImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/staff`,
+    require('./staffDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/staff/autocomplete`,
+    require('./staffAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/staff`,
+    require('./staffList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/staff/:id`,
+    require('./staffFind').default,
+  );
+};

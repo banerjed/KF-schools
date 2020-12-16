@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/assignment-result`,
+    require('./assignmentResultCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/assignment-result/:id`,
+    require('./assignmentResultUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/assignment-result/import`,
+    require('./assignmentResultImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/assignment-result`,
+    require('./assignmentResultDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assignment-result/autocomplete`,
+    require('./assignmentResultAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assignment-result`,
+    require('./assignmentResultList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assignment-result/:id`,
+    require('./assignmentResultFind').default,
+  );
+};

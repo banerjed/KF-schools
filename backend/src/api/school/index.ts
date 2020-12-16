@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/school`,
+    require('./schoolCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/school/:id`,
+    require('./schoolUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/school/import`,
+    require('./schoolImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/school`,
+    require('./schoolDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school/autocomplete`,
+    require('./schoolAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school`,
+    require('./schoolList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school/:id`,
+    require('./schoolFind').default,
+  );
+};

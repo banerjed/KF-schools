@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/subject`,
+    require('./subjectCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/subject/:id`,
+    require('./subjectUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/subject/import`,
+    require('./subjectImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/subject`,
+    require('./subjectDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/subject/autocomplete`,
+    require('./subjectAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/subject`,
+    require('./subjectList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/subject/:id`,
+    require('./subjectFind').default,
+  );
+};

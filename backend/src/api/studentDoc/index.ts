@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/student-doc`,
+    require('./studentDocCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/student-doc/:id`,
+    require('./studentDocUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/student-doc/import`,
+    require('./studentDocImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/student-doc`,
+    require('./studentDocDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-doc/autocomplete`,
+    require('./studentDocAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-doc`,
+    require('./studentDocList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/student-doc/:id`,
+    require('./studentDocFind').default,
+  );
+};
