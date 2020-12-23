@@ -17,6 +17,14 @@ const staffEnumerators = {
     'CleaningStaff',
     'Councillor',
     'Other',
+    'HR',
+    'Education Program Manager',
+    'MIS Staff',
+    'Office Staff',
+    'Ground Staff',
+    'Electrician',
+    'Gatekeeper',
+    'Coordinator'
   ],
   gender: [
     'Male',

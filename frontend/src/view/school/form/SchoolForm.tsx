@@ -55,7 +55,7 @@ const schema = yup.object().shape({
   principalsName: yupFormSchemas.string(
     i18n('entities.school.fields.principalsName'),
     {
-      "min": 10,
+      "min": 5,
       "max": 100
     },
   ),
@@ -76,7 +76,7 @@ const schema = yup.object().shape({
   vicePrincipalsName: yupFormSchemas.string(
     i18n('entities.school.fields.vicePrincipalsName'),
     {
-      "min": 10,
+      "min": 5,
       "max": 100
     },
   ),

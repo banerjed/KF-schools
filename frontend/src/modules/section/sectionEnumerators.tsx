@@ -1,8 +1,9 @@
 const sectionEnumerators = {
   grade: [
     'Nursery',
-    'Pre_KG',
-    'KG',
+    'Preparatory',
+    'LKG',
+    'UKG',
     'Class_I',
     'Class_2',
     'Class_3',

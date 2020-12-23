@@ -18,8 +18,9 @@ export default function (sequelize) {
         allowNull: false,
         values: [
           "Nursery",
-          "Pre_KG",
-          "KG",
+          "Preparatory",
+          "LKG",
+          "UKG",
           "Class_I",
           "Class_2",
           "Class_3",

@@ -62,7 +62,15 @@ export default function (sequelize) {
           "Admin",
           "CleaningStaff",
           "Councillor",
-          "Other"
+          "Other",
+          "HR",
+          "Education Program Manager",
+          "MIS Staff",
+          "Office Staff",
+          "Ground Staff", 
+          "Electrician",
+          "Gatekeeper",
+          "Coordinator",
         ],
       },
       dateOfBirth: {
